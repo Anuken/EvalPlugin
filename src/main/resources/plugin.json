@@ -1,0 +1,7 @@
+{
+  "name": "Eval",
+  "author": "Anuke",
+  "main": "eval.EvalPlugin",
+  "description": "A plugin to let admins evalulate arbitrary Java code on the server for debugging purposes.",
+  "version": 1.0
+}
