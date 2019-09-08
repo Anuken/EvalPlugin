@@ -22,6 +22,10 @@ public class Eval{
 
         exec.submit(() -> {
             try{
+                if(compiler == null){
+                    error.accept(new RuntimeException("Your Java installation does not support Eval, specifically ToolProvider.getSystemJavaCompiler()"));
+                    return;
+                }
                 String code = (ccode.startsWith(";") ? ccode.substring(1) : "callback__.accept(String.valueOf(" + ccode + ")  );") + ";";
 
                 invoke(className, io.anuke.arc.collection.Array.with(imports).map(f -> "import " + f + ".*;").toString("\n") + "\n" + "\nimport static io.anuke.mindustry.Vars.*;\npublic class "
