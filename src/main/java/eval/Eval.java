@@ -50,7 +50,7 @@ public class Eval{
         String str = new String(err.toByteArray());
         if(!str.isEmpty()){
             if(str.contains("'void' type not allowed here") && source.contains("callback__.accept(String.valueOf(")){
-                invoke(filename, source.replace(")  )", "").replace("error__.accept(String.valueOf(", ""), callback, error);
+                invoke(filename, source.replace(")  )", "").replace("callback__.accept(String.valueOf(", ""), callback, error);
             }else{
                 error.accept(new RuntimeException(str));
             }
